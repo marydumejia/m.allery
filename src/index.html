@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>m.allery</title>
   <link rel="stylesheet" href="./output.css">
-  <script src="./script.js"></script>
+  <script defer src="./script.js" ></script>
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
-<body class="flex flex-col items-end bg-stone-100 text-stone-900">
-    <div>
-        <nav class="p-5 px-12 flex justify-end ">
-            <ul class="flex justify-end items-end space-x-[2rem]">
+<body class="flex flex-col justify-center items-center bg-stone-100 text-stone-900">
+    <div class="w-full flex justify-end items-end">
+        <nav class="p-5">
+            <ul class="flex space-x-[2rem]">
                 <li><button id="upload-img" class="text-stone-900 font-semibold rounded-full hover:text-purple-800 hover:border-transparent">UPLOAD PIC</button></li>
                 <li><button id="upload-url" class="text-stone-900 font-semibold rounded-full hover:text-purple-800 hover:border-transparent">UPLOAD URL</button></li>
-                <li><button id="about-me" class="text-stone-900 font-semibold rounded-full hover:text-purple-800 hover:border-transparent">ABOUT ME</button></li>
+                <li><button id="about-me" class=" text-stone-900 font-semibold rounded-full hover:text-purple-800 hover:border-transparent">ABOUT ME</button></li>
             </ul>
           </nav>
     </div>
@@ -25,7 +25,7 @@
       <p class="text-left text-3xl" >puedes agregarles detalles!</p>
       <button id="help-plz" class="mt-8 px-6 py-2 text-white font-semibold rounded-full hover:text-stone-900 hover:border-transparent bg-stone-900 border hover:bg-stone-100 border-stone-900 rounded-full">HELP PLZ</button>
     </div>
-    <div id="content-choose" class="hidden min-h-[20rem] w-[20rem] border border-stone-900 rounded flex flex-col gap-5 py-8 px-10 items-center justify-center">
+    <div id="content-choose" class="hidden items-center place-content-center min-h-[20rem] w-[20rem] border border-stone-900 rounded flex flex-col gap-5 py-8 px-10 items-center justify-center">
       <p class="px-6 py-2 text-2xl text-stone-900 font-semibold">ADD YOUR PICS</p>
       <input type="text" name="title" id="img-title" placeholder="TITLE" class="w-full pl-5 py-2 rounded text-black placeholder:text-stone-400">
       <input type="text" name="descrip" id="img-descrip" placeholder="DESCRIPTION" class="w-full pl-5 py-2 rounded text-black placeholder:text-stone-400">
@@ -43,12 +43,7 @@
         <button id="after-button" class="pl-8 text-xl font-medium hover:text-purple-800"> &RightArrow;</button>
       </div>
   </section>
-    <main id="image-container" class="grid grid-cols-5 w-full gap-4 pl-20">
-      <p>i</p>
-      <p>i</p>
-      <p>i</p>
-      <p>i</p>
-      <p>i</p>
+    <main id="image-container" class="grid grid-cols-5 w-full gap-4 pl-20 pb-20">
     </main>
 </body>
 </html>
