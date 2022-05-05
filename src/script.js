@@ -3,6 +3,7 @@ const imageFile = document.getElementById('img-pic')
 const imageAdd = document.getElementById('add-img')
 const contentTable = document.getElementById('content-choose')
 const introText = document.getElementById('intro-text')
+const helpPlz = document.getElementById('help-plz')
 
 const imageTitle = document.getElementById('img-title')
 const imageUrl = document.getElementById('img-url')
@@ -10,15 +11,19 @@ const imageDescrip = document.getElementById('img-descrip')
 const uploadImg = document.getElementById('upload-img')
 const uploadUrl = document.getElementById('upload-url')
 
-const beforeButton = document.getElementById('before-button');
-const afterButton = document.getElementById('after-button');
+const beforeButton = document.getElementById('before-button')
+const afterButton = document.getElementById('after-button')
 
 uploadImg.addEventListener('click', () => {
     contentTable.classList.remove('hidden');
     introText.classList.add('hidden');
 })
 
-uploadUrl.addEventListener('click', ()=>{
+helpPlz.addEventListener('click', () => {
+    localStorage.clear();
+})
+
+uploadUrl.addEventListener('click', () => {
     contentTable.classList.remove('hidden');
     imageUrl.classList.remove('hidden');
     imageFile.parentElement.classList.add('hidden');
@@ -53,8 +58,9 @@ imageAdd.addEventListener('click', async () => {
     const title = imageTitle.value;
     const file = imageFile.files[0];
     const url = imageUrl.value;
+    const descrip = imageDescrip.value;
 
-    if (!title || (!file && !url)) {
+    if (!title || (!file && !url) || !descrip) {
         alert('please fill all fields :)');
         return;
     }
@@ -70,6 +76,8 @@ imageAdd.addEventListener('click', async () => {
     cleanInputs();
     clearContainer(imageContainer);
     createImages(images, imageContainer);
+    contentTable.classList.add('hidden');
+    introText.classList.remove('hidden');
 });
 
 function getLocalImages () {
@@ -84,6 +92,7 @@ function cleanInputs () {
     imageFile.value = '';
     imageUrl.value = '';
     imageTitle.value = '';
+    imageDescrip.value = '';
 }
 
 function clearContainer (container) {
@@ -110,7 +119,8 @@ function createImages (images,container) {
 
         title.innerText = image.title;
         descrip.innerText = image.descrip;
-        title.className = 'text-center text-2xl text-gray-800';
+        descrip.className = 'text-center text-xl text-gray-800';
+        title.className = 'text-center text-6xl text-gray-800';
 
         div.appendChild(img);
         div.appendChild(title);
